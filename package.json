@@ -1,0 +1,26 @@
+{
+  "name": "bead-studio-web",
+  "version": "0.1.0",
+  "description": "A local-first web studio for generating, editing and exporting fuse-bead patterns.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build && node scripts/dev-server.cjs",
+    "build": "tsc && node scripts/clean-dist.cjs && tsc -p tsconfig.build.json && node scripts/post-build.cjs && node scripts/write-html.cjs",
+    "preview": "node scripts/dev-server.cjs",
+    "test": "npm run test:core",
+    "test:core": "node --experimental-strip-types --test --test-isolation=none tests/*.test.ts"
+  },
+  "dependencies": {
+    "@types/three": "^0.184.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "three": "^0.184.0",
+    "typescript": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3"
+  }
+}
+
